@@ -1,0 +1,32 @@
+-- Initial Schema for Power Learn DBMS
+
+-- Create Users Table
+CREATE TABLE Users (
+    UserID INT PRIMARY KEY AUTO_INCREMENT,
+    Username VARCHAR(50) NOT NULL UNIQUE,
+    PasswordHash VARCHAR(255) NOT NULL,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create Books Table
+CREATE TABLE Books (
+    BookID INT PRIMARY KEY AUTO_INCREMENT,
+    Title VARCHAR(100) NOT NULL,
+    Author VARCHAR(100) NOT NULL,
+    ISBN VARCHAR(20) NOT NULL UNIQUE,
+    PublishedDate DATE,
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Create Loans Table
+CREATE TABLE Loans (
+    LoanID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT NOT NULL,
+    BookID INT NOT NULL,
+    LoanDate DATE NOT NULL,
+    ReturnDate DATE,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (BookID) REFERENCES Books(BookID),
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
