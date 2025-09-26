@@ -1,0 +1,23 @@
+{
+  "name": "interactive-web-project",
+  "version": "1.0.0",
+  "description": "A web project with interactive features including form validation and light/dark mode toggle.",
+  "main": "src/js/script.js",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build step not defined'"
+  },
+  "keywords": [
+    "interactive",
+    "web",
+    "form",
+    "validation",
+    "light-dark-mode"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

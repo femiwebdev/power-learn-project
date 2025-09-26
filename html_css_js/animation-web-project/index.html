@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CSS Animations + JS Functions — Mini Project</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>CSS Animations + JavaScript Functions</h1>
+
+    <!-- Part 1: CSS3 Transitions and Animations -->
+    <section id="part1" class="card">
+      <h2>Part 1 — Pure CSS Animations</h2>
+      <p>Hover buttons and an auto-animated banner demonstrate transitions & keyframes.</p>
+
+      <div class="controls">
+        <button class="btn primary">Primary Hover</button>
+        <button class="btn ghost">Ghost Hover</button>
+      </div>
+
+      <div class="banner pulse-banner">
+        <span class="banner-text">CSS Pulse Banner</span>
+      </div>
+    </section>
+
+    <!-- Part 2: JavaScript Functions — scope, params, return -->
+    <section id="part2" class="card">
+      <h2>Part 2 — JS Functions (scope, parameters, return values)</h2>
+      <p>Open the console to see logged outputs demonstrating scope and return values.</p>
+      <button id="calcBtn" class="btn">Run Calculator Function</button>
+      <pre id="calcOutput" class="output" aria-live="polite"></pre>
+    </section>
+
+    <!-- Part 3: Combining CSS Animations with JavaScript -->
+    <section id="part3" class="card">
+      <h2>Part 3 — Combine JS with CSS Animations</h2>
+
+      <div class="demo-row">
+        <div id="animBox" class="box">Box</div>
+
+        <div class="flip-wrap">
+          <div id="card" class="flip-card">
+            <div class="front">Front</div>
+            <div class="back">Back</div>
+          </div>
+          <button id="flipBtn" class="btn">Flip Card</button>
+        </div>
+      </div>
+
+      <div class="modal-demo">
+        <button id="openModal" class="btn primary">Open Modal</button>
+        <button id="toggleLoader" class="btn ghost">Start/Stop Loader</button>
+      </div>
+
+      <div id="modal" class="modal" aria-hidden="true">
+        <div class="modal-panel">
+          <button id="closeModal" class="btn">Close</button>
+          <p>Animated modal: slides in and fades using CSS; JS toggles classes.</p>
+        </div>
+      </div>
+
+      <div class="loader" id="loader" aria-hidden="true"></div>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

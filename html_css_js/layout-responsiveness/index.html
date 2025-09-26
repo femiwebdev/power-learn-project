@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Responsive Grid and Flexbox Layout</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="site">
+    <header class="site-header">
+      <div class="brand">
+        <h1>PowerLearn</h1>
+        <span class="tag">responsive demo</span>
+      </div>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Resources</a></li>
+          <li><a href="#">About</a></li>
+          <li><a class="cta" href="#">Sign Up</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div class="hero-inner">
+        <h2>Learn, Build, and Grow</h2>
+        <p>Structured lessons, real projects, and community-driven support — optimized for any device.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#">Get Started</a>
+          <a class="btn ghost" href="#">Explore Courses</a>
+        </div>
+      </div>
+    </div>
+
+    <main class="layout">
+      <section class="content" aria-label="Main content">
+        <h3>Featured Courses</h3>
+
+        <!-- Flexbox used for cards -->
+        <div class="card-row">
+          <article class="card">
+            <h4>Modern CSS Layouts</h4>
+            <p>Master Grid and Flexbox with practical examples.</p>
+            <a class="card-link" href="#">View course</a>
+          </article>
+
+          <article class="card">
+            <h4>JavaScript Fundamentals</h4>
+            <p>Build solid fundamentals and real-world projects.</p>
+            <a class="card-link" href="#">View course</a>
+          </article>
+
+          <article class="card">
+            <h4>React & Patterns</h4>
+            <p>Component design, state patterns, and performance tips.</p>
+            <a class="card-link" href="#">View course</a>
+          </article>
+        </div>
+
+        <section class="article-list">
+          <h3>Latest Articles</h3>
+          <article class="article">
+            <h4>Accessibility-first design</h4>
+            <p>Small changes with big impact on usability.</p>
+            <a href="#">Read →</a>
+          </article>
+          <article class="article">
+            <h4>Testing strategies</h4>
+            <p>Unit vs integration vs E2E — when to use each.</p>
+            <a href="#">Read →</a>
+          </article>
+        </section>
+      </section>
+
+      <aside class="sidebar" aria-label="Sidebar">
+        <div class="widget">
+          <h4>Profile</h4>
+          <p>Welcome back, learner 👋</p>
+          <a class="btn small" href="#">Dashboard</a>
+        </div>
+
+        <div class="widget">
+          <h4>Upcoming</h4>
+          <ul>
+            <li>Live workshop — Sep 7</li>
+            <li>Q&A session — Sep 12</li>
+          </ul>
+        </div>
+
+        <div class="widget">
+          <h4>Tags</h4>
+          <div class="tags">
+            <span>css</span><span>javascript</span><span>react</span><span>ux</span>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <small>© 2025 PowerLearn</small>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Contact</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

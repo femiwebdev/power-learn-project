@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Multi-Section Web Page & Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+            background: #f9f9f9;
+            color: #222;
+        }
+        header, nav, main, section, footer {
+            margin-bottom: 2rem;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 1rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: #0077cc;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        th, td {
+            border: 1px solid #bbb;
+            padding: 0.5rem;
+            text-align: left;
+        }
+        th {
+            background: #e0e0e0;
+        }
+        fieldset {
+            border: 1px solid #bbb;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 0.3rem;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            box-sizing: border-box;
+        }
+        .form-actions {
+            margin-top: 1rem;
+        }
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Enhanced Web Page</h1>
+        <p>This page demonstrates the use of lists, tables, media, and a complete HTML5 form with accessibility and validation features.</p>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="#lists">Lists</a></li>
+            <li><a href="#table">Table</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#form">Form</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="lists">
+            <h2>Popular Web Technologies</h2>
+            <h3>Frontend Technologies</h3>
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript
+                    <ul>
+                        <li>React</li>
+                        <li>Vue.js</li>
+                        <li>Angular</li>
+                    </ul>
+                </li>
+                <li>TypeScript</li>
+            </ul>
+            <h3>Backend Technologies</h3>
+            <ol>
+                <li>Node.js</li>
+                <li>Python (Django, Flask)</li>
+                <li>Ruby on Rails</li>
+                <li>PHP (Laravel)</li>
+            </ol>
+            <h3>Key Features</h3>
+            <dl>
+                <dt>Responsive Design</dt>
+                <dd>Ensures web pages look good on all devices.</dd>
+                <dt>Accessibility</dt>
+                <dd>Makes web content usable for everyone.</dd>
+                <dt>Performance</dt>
+                <dd>Optimizes speed and efficiency.</dd>
+            </dl>
+        </section>
+
+        <section id="table">
+            <h2>Comparison Table: Frameworks</h2>
+            <table>
+                <caption>Frontend Frameworks Comparison</caption>
+                <thead>
+                    <tr>
+                        <th>Framework</th>
+                        <th>Language</th>
+                        <th>Initial Release</th>
+                        <th>License</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>React</td>
+                        <td>JavaScript</td>
+                        <td>2013</td>
+                        <td>MIT</td>
+                    </tr>
+                    <tr>
+                        <td>Vue.js</td>
+                        <td>JavaScript</td>
+                        <td>2014</td>
+                        <td>MIT</td>
+                    </tr>
+                    <tr>
+                        <td>Angular</td>
+                        <td>TypeScript</td>
+                        <td>2016</td>
+                        <td>MIT</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="media">
+            <h2>Media Showcase</h2>
+            <figure>
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" alt="Laptop on desk with code editor open">
+                <figcaption>Modern web development workspace.</figcaption>
+            </figure>
+            <figure>
+                <video controls poster="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption>Sample HTML5 video demonstration.</figcaption>
+            </figure>
+        </section>
+
+        <section id="form">
+            <h2>Contact & Registration Form</h2>
+            <form action="#" method="post" autocomplete="on">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    
+                    <label for="fullname">Full Name *</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Jane Doe" required minlength="3" autocomplete="name">
+
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1234567890" pattern="^\+?\d{10,15}$" autocomplete="tel">
+
+                    <label for="dob">Date of Birth *</label>
+                    <input type="date" id="dob" name="dob" required max="2025-12-31" autocomplete="bday">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Account Details</legend>
+                    
+                    <label for="username">Username *</label>
+                    <input type="text" id="username" name="username" placeholder="Choose a username" required minlength="4" maxlength="16" pattern="^[a-zA-Z0-9_]+$" autocomplete="username">
+
+                    <label for="password">Password *</label>
+                    <input type="password" id="password" name="password" placeholder="At least 8 characters" required minlength="8" autocomplete="new-password">
+
+                    <label for="confirm-password">Confirm Password *</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter your password" required minlength="8" autocomplete="new-password">
+
+                    <label for="role">Role *</label>
+                    <select id="role" name="role" required>
+                        <option value="">Select a role</option>
+                        <option value="developer">Developer</option>
+                        <option value="designer">Designer</option>
+                        <option value="manager">Manager</option>
+                        <option value="student">Student</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Preferences</legend>
+                    
+                    <label>Subscribe to newsletter?</label>
+                    <input type="radio" id="newsletter-yes" name="newsletter" value="yes" required>
+                    <label for="newsletter-yes" style="display:inline;">Yes</label>
+                    <input type="radio" id="newsletter-no" name="newsletter" value="no">
+                    <label for="newsletter-no" style="display:inline;">No</label>
+
+                    <label for="interests">Interests</label>
+                    <select id="interests" name="interests[]" multiple size="3">
+                        <option value="frontend">Frontend Development</option>
+                        <option value="backend">Backend Development</option>
+                        <option value="uiux">UI/UX Design</option>
+                        <option value="devops">DevOps</option>
+                    </select>
+
+                    <label for="bio">Short Bio</label>
+                    <textarea id="bio" name="bio" rows="3" maxlength="300" placeholder="Tell us a little about yourself..."></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Terms & Confirmation</legend>
+                    
+                    <label>
+                        <input type="checkbox" name="terms" required>
+                        I agree to the <a href="#" target="_blank">terms and conditions</a> *
+                    </label>
+                    
+                    <label for="referral">Referral Code</label>
+                    <input type="text" id="referral" name="referral" value="PLP2025" readonly>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Enhanced Web Page Demo. All

@@ -1,0 +1,215 @@
+/* Reset & base ------------------------------------------------------------ */
+:root{
+  --gap: 1.25rem;
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --accent: #0066ff;
+  --muted: #61707a;
+  --radius: 12px;
+  --max-width: 1100px;
+  --container-padding: 1rem;
+}
+
+* { box-sizing: border-box; }
+html,body { height:100%; }
+body {
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg), #eef3fb);
+  color:#102127;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Page wrapper and header (Flexbox) ------------------------------------- */
+/* Header uses Flexbox to align brand and navigation responsively */
+.site {
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.site-header{
+  width:100%;
+  background:transparent;
+  padding: .75rem var(--container-padding);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  max-width:var(--max-width);
+}
+
+.brand h1{
+  margin:0;
+  font-size:1.125rem;
+  letter-spacing: -.5px;
+}
+.brand .tag{
+  display:block;
+  font-size:.75rem;
+  color:var(--muted);
+}
+
+/* Nav as flex row, wraps on smaller screens */
+.main-nav ul{
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:flex;
+  gap:.75rem;
+  align-items:center;
+}
+.main-nav a{
+  text-decoration:none;
+  color:inherit;
+  padding:.45rem .6rem;
+  border-radius:8px;
+}
+.main-nav a:hover{ background: rgba(0,0,0,0.03); }
+.main-nav .cta{
+  background:var(--accent); color:#fff; padding:.45rem .9rem;
+  box-shadow: 0 2px 6px rgba(3, 102, 255, .12);
+}
+
+/* Hero block ------------------------------------------------------------- */
+.hero{
+  width:100%;
+  background:linear-gradient(180deg, rgba(0,102,255,0.06), transparent);
+  padding:1.75rem var(--container-padding);
+}
+.hero-inner{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:1rem;
+  border-radius:var(--radius);
+}
+.hero h2{ margin:0 0 .25rem 0; font-size:1.5rem; }
+.hero p{ color:var(--muted); margin:0 0 .75rem 0; }
+
+/* Main layout uses CSS Grid ------------------------------------------------
+   Grid defines layout areas: content + sidebar. Grid demonstrates explicit
+   area placement and column changes across breakpoints.
+---------------------------------------------------------------------------*/
+.layout{
+  width:100%;
+  max-width:var(--max-width);
+  margin: var(--gap) auto;
+  padding:0 var(--container-padding);
+  display:grid;
+  grid-template-columns: 1fr 320px;   /* desktop: main + sidebar */
+  gap: clamp(1rem, 1.5vw, 2rem);
+  align-items:start;
+  grid-auto-rows: min-content;
+}
+
+/* Content styles */
+.content{ background:transparent; }
+.content h3{ margin:0 0 .5rem 0; }
+
+/* Cards area uses Flexbox for alignment and wrapping */
+.card-row{
+  display:flex;
+  gap:1rem;
+  margin: .75rem 0 1.25rem 0;
+  flex-wrap:wrap;
+}
+.card{
+  background:var(--card);
+  padding:1rem;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(10,20,40,0.06);
+  flex: 1 1 calc(33% - 1rem); /* 3 columns on wide screens */
+  min-width:220px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.card h4{ margin:0 0 .5rem 0; }
+.card p{ color:var(--muted); margin:0 0 .75rem 0; }
+.card-link{ color:var(--accent); font-weight:600; text-decoration:none; }
+
+/* Article list */
+.article-list{ margin-top: .75rem; }
+.article{ padding:.75rem 0; border-bottom:1px dashed rgba(0,0,0,0.04); }
+.article h4{ margin:.25rem 0; }
+.article p{ margin:0; color:var(--muted); }
+
+/* Sidebar widgets */
+.sidebar{ background:transparent; display:flex; flex-direction:column; gap:1rem; }
+.widget{
+  background:var(--card); padding:1rem; border-radius:12px;
+  box-shadow:0 6px 18px rgba(10,20,40,0.05);
+}
+.tags{ display:flex; flex-wrap:wrap; gap:.5rem; }
+.tags span{ background:rgba(0,0,0,0.04); padding:.3rem .5rem; border-radius:8px; font-size:.85rem; }
+
+/* Footer ----------------------------------------------------------------- */
+.site-footer{
+  width:100%;
+  padding:1rem var(--container-padding);
+  margin-top:auto;
+  background:transparent;
+}
+.footer-inner{
+  max-width:var(--max-width);
+  margin:0 auto;
+  display:flex;
+  gap:1rem;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* Buttons and utilities -------------------------------------------------- */
+.btn{
+  display:inline-block;
+  background:var(--accent);
+  color:white;
+  padding:.6rem .9rem;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+}
+.btn.ghost{ background:transparent; color:var(--accent); border:1px solid rgba(0,102,255,0.12); }
+.btn.small{ padding:.35rem .6rem; font-size:.9rem; }
+
+/* Responsive breakpoints ------------------------------------------------- */
+/* Tablet: stack grid to 1fr  (sidebar moves below content if narrow) */
+@media (max-width: 1024px) {
+  :root { --max-width: 920px; }
+  .layout{
+    grid-template-columns: 1fr 280px;
+  }
+  .card{ flex: 1 1 calc(50% - 1rem); } /* 2 columns for cards */
+}
+
+/* Mobile: single column grid; hide some nav items (simple responsive behavior) */
+@media (max-width: 768px) {
+  :root { --container-padding: .75rem; --max-width: 100%; }
+  .site-header{ padding: .5rem var(--container-padding); }
+  .main-nav ul{
+    gap:.35rem;
+    flex-wrap:wrap;
+  }
+  /* Move to single column layout: content above sidebar */
+  .layout{
+    grid-template-columns: 1fr;
+  }
+  .sidebar{
+    order:2;
+  }
+  .content{ order:1; }
+  /* Cards become single column for narrow view */
+  .card{ flex: 1 1 100%; }
+  .hero-inner{ padding:.75rem; }
+  .footer-inner{ flex-direction:column; align-items:flex-start; gap:.5rem; }
+}
+
+/* Small screens: simplified nav and spacing */
+@media (max-width: 420px) {
+  .brand h1{ font-size:1rem; }
+  .hero h2{ font-size:1.125rem; }
+  .main-nav a{ padding:.4rem .45rem; font-size:.95rem; }
+}
+
+/* End of stylesheet ------------------------------------------------------ */

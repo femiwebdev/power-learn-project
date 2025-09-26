@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Contact Form</title>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <form action="#" method="post">
+        <label for="name" aria-label="Name" aria-placeholder="Name" placeholder="Name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email" aria-label="Email" aria-placeholder="Email" placeholder="Email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message" aria-label="Message" aria-placeholder="Message" placeholder="Message">Message:</label>
+        <textarea id="message" name="message" rows="4" pattern=".{10,}" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</body>
+</html>
